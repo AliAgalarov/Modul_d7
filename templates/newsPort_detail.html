@@ -1,0 +1,24 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %} The Best News: {{ post }} {% endblock title %}
+
+
+{% block content %}
+
+<br>
+<h3>{{ post }}</h3>
+<br>
+{{ post.text }}
+<br>
+<br>
+- новость №{{ post.pk }}; автор: {{ post.author }}; категория: {{ post.category }}; дата создания: {{ post.dateCreation }} -
+<br>
+<br>
+
+<a href="{% url 'newsP_edit' post.id %}"><u>Редактировать</u></a>   <!--добавим ссылку на редактирование товара-->
+<a href="{% url 'delete' post.id %}"><u>Удалить</u></a>   <!--добавим ссылку на удаление товара-->
+
+
+<hr>
+
+{% endblock content %}
